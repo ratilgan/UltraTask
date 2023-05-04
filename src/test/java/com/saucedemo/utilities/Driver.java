@@ -1,5 +1,6 @@
 package com.saucedemo.utilities;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -30,6 +31,7 @@ public class Driver {
 
       switch (browser) {
         case "chrome":
+          WebDriverManager.chromedriver().setup();
           ChromeOptions chromeOptions = new ChromeOptions();
           chromeOptions.addArguments(
               "--incognito",

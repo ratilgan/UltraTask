@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt"},
         features = "src/test/resources/features/",
         glue = "com/saucedemo/stepDefinitions",
-        dryRun = true,
+        dryRun = false,
         tags = "@wip"
 
 )
