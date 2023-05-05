@@ -1,6 +1,8 @@
 name: Ultra UI Task
 
-on: [workflow_dispatch]
+on:
+  schedule:
+    - cron: '2,10,52 * * * *'
 
 jobs:
   build:
