@@ -37,4 +37,9 @@ public class ProductsStepDefs {
         productsPage.assertNumberOfAddedItems();
     }
 
+    @When("stores the product information")
+    public void stores_the_product_information() {
+
+    }
+
 }
