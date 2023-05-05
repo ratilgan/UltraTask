@@ -13,6 +13,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/",
         glue = "com/saucedemo/stepDefinitions",
         dryRun = false,
+        publish = true,
         tags = "@wip"
 
 )
