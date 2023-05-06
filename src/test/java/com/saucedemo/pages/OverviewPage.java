@@ -5,7 +5,6 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,8 +20,6 @@ public class OverviewPage {
     @FindBy(className = "inventory_item_price")
     public List<WebElement> itemPrices;
 
-
-
     public void validateTheTotalPrice(){
 
         // getting the actual total price as String without $ sign
@@ -36,6 +33,7 @@ public class OverviewPage {
         // getting each price, parsing them to double and calculating total expected price
         double expectedTotalPrice = 0;
         List<Double> expectedPrices = new ArrayList<>();
+
         for (WebElement itemPrice : itemPrices) {
             String itemPriceString = itemPrice.getText().substring(itemPrice.getText().indexOf("$")+1);
             String[] arr1 = itemPriceString.split("\\.");
@@ -48,8 +46,5 @@ public class OverviewPage {
         System.out.println("expectedTotalPrice = " + expectedTotalPrice);
 
         Assert.assertEquals(expectedTotalPrice, actualTotalPrice, 0);
-
     }
-
-
 }

@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,23 +35,17 @@ public class ProductsPage {
     @FindBy(css = ".inventory_item_price")
     public List<WebElement> productPrices;
 
-
     int numberOfItemsToAdd;
 
     Random random = new Random();
     public static Map<String, String> productInformations = new HashMap<>();
-
 
     public void addAnItemToTheCart(){
         numberOfItemsToAdd = random.nextInt(addToCartAndRemoveButtons.size()-1);
         addToCartAndRemoveButtons.get(numberOfItemsToAdd).click();
     }
 
-    public void removeAnItemFromTheCart(){
-        addToCartAndRemoveButtons.get(numberOfItemsToAdd).click();
-    }
-
-    public void assertTheTextAndColorOfTheButton(String expectedText){
+    public void assertTheTextOfTheButton(String expectedText){
         Assert.assertEquals(expectedText, addToCartAndRemoveButtons.get(numberOfItemsToAdd).getText());
     }
 
@@ -81,5 +74,4 @@ public class ProductsPage {
     public void assertNumberOfAddedItems(){
         Assert.assertEquals(numberOfItemsToAdd, Integer.parseInt(shoppingCartBadge.getText()));
     }
-
 }

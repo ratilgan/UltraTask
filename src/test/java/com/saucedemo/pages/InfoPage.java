@@ -24,7 +24,6 @@ public class InfoPage {
     @FindBy(id = "continue")
     public WebElement continueButton;
 
-
     public void fillInformationInputs(){
         Faker faker = new Faker();
 
@@ -36,6 +35,5 @@ public class InfoPage {
     public void clickContinueButton(){
         continueButton.click();
     }
-
 
 }

@@ -16,13 +16,8 @@ public class CartStepsDefs {
         productsPage.shoppingCartLink.click();
     }
     @Then("items added should be listed")
-    public void items_added_should_be_listed() throws InterruptedException {
+    public void items_added_should_be_listed() {
         Assert.assertEquals(ProductsPage.productInformations, cartPage.getlistedProductInformation());
     }
-
-
-
-
-
 
 }

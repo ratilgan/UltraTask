@@ -48,6 +48,7 @@ public class Driver {
           LOGGER.info("***** The Browser is Chrome *****");
           break;
         case "chrome-headless":
+          WebDriverManager.chromedriver().setup();
           ChromeOptions chromeHeadlessOptions = new ChromeOptions();
           chromeHeadlessOptions.addArguments(
               "--incognito",
@@ -65,6 +66,7 @@ public class Driver {
           LOGGER.info("***** The Browser is Chrome-Headless *****");
           break;
         case "firefox":
+          WebDriverManager.firefoxdriver().setup();
           FirefoxOptions firefoxOptions = new FirefoxOptions();
           firefoxOptions.addArguments(
               "--headless",
@@ -73,6 +75,7 @@ public class Driver {
           LOGGER.info("***** The Browser is Firefox *****");
           break;
         case "firefox-headless":
+          WebDriverManager.firefoxdriver().setup();
           FirefoxOptions firefoxHeadlessOptions = new FirefoxOptions();
           firefoxHeadlessOptions.addArguments(
               "--headless",
@@ -81,14 +84,17 @@ public class Driver {
           LOGGER.info("***** The Browser is Firefox-Headless *****");
           break;
         case "edge":
+          WebDriverManager.edgedriver().setup();
           driverPool.set(new EdgeDriver());
           LOGGER.info("***** The Browser is Edge *****");
           break;
         case "safari":
+          WebDriverManager.getInstance(SafariDriver.class).setup();
           driverPool.set(new SafariDriver());
           LOGGER.info("***** The Browser is Safari *****");
           break;
         case "remote_chrome":
+          WebDriverManager.chromedriver().setup();
           ChromeOptions chromeRemoteOptions = new ChromeOptions();
           try {
             driverPool.set(new RemoteWebDriver(new URL("http://xxx.xxx.x.xx:5555/wd/hub"),
@@ -106,5 +112,4 @@ public class Driver {
         driverPool.get().quit();
         driverPool.remove();
     }
-
 }

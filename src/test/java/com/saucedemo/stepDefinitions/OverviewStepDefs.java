@@ -11,5 +11,4 @@ public class OverviewStepDefs {
     public void total_price_should_validated() {
         overviewPage.validateTheTotalPrice();
     }
-
 }

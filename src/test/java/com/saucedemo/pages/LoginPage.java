@@ -21,14 +21,10 @@ public class LoginPage {
     @FindBy(id = "login-button")
     public WebElement loginButton;
 
-
     public void logIn(){
         Driver.get().get(ConfigurationReader.get("url"));
         usernameInputBox.sendKeys(ConfigurationReader.get("username"));
         passwordInputBox.sendKeys(ConfigurationReader.get("password"));
         loginButton.click();
     }
-
-
-
 }
