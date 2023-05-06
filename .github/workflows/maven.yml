@@ -2,7 +2,7 @@ name: Ultra UI Task
 
 on:
   schedule:
-    - cron: '2,10,52 * * * *'
+    - cron: '0 8,17 * * *'
 
 jobs:
   build:
